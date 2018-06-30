@@ -52,3 +52,13 @@ Y_train = dataset.iloc[:, 0].values
 
 labelencoder_X_1 = LabelEncoder()
 X_train[:, 1] = labelencoder_X_1.fit_transform(X_train[:, 1])
+X_train[:, 4] = labelencoder_X_1.fit_transform(X_train[:, 4])
+X_train[:, 5] = labelencoder_X_1.fit_transform(X_train[:, 5])
+X_train[:, 6] = labelencoder_X_1.fit_transform(X_train[:, 6])
+
+
+labelencoder_X_2 = LabelEncoder()
+X_test[:, 1] = labelencoder_X_2.fit_transform(X_test[:, 1])
+X_test[:, 4] = labelencoder_X_2.fit_transform(X_test[:, 4])
+X_test[:, 5] = labelencoder_X_2.fit_transform(X_test[:, 5])
+X_test[:, 6] = labelencoder_X_2.fit_transform(X_test[:, 6])
