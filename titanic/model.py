@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+from sklearn.model_selection import train_test_split
+
 
 dataset = pd.read_csv('train.csv')
 X_test = pd.read_csv('test.csv')
@@ -62,3 +64,8 @@ X_test[:, 1] = labelencoder_X_2.fit_transform(X_test[:, 1])
 X_test[:, 4] = labelencoder_X_2.fit_transform(X_test[:, 4])
 X_test[:, 5] = labelencoder_X_2.fit_transform(X_test[:, 5])
 X_test[:, 6] = labelencoder_X_2.fit_transform(X_test[:, 6])
+
+
+one_hot_encoder = OneHotEncoder(categorical_features = [0, 1, 4, 5, 6])
+X_train = one_hot_encoder.fit_transform(X_train).toarray()
+X_test = one_hot_encoder.fit_transform(X_test).toarray()
