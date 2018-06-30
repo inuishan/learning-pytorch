@@ -2,9 +2,14 @@ from __future__ import print_function
 import torch
 
 # This will create a matrix with any value unbounded
-x = torch.empty(5, 3)
-print(x)
+# This is sometimes causing exception for large values, hence commenting
+# x = torch.empty(5, 3)
+# print(x)
 
 # This will create a matrix with values from 0 to 1
 y = torch.rand(5, 3)
 print(y)
+
+# creating martix with 0s
+z = torch.zeros(5, 3, dtype=torch.long)
+print(z)
