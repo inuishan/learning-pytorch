@@ -3,6 +3,9 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 from sklearn.model_selection import train_test_split
 
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
 
 dataset = pd.read_csv('train.csv')
 X_test = pd.read_csv('test.csv')
